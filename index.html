@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Registration / Service Request Form</title>
+</head>
+<body>
+
+    <h1>Company Registration & Service Request Form</h1>
+
+    <form method="post" action="#">
+
+        <!-- Section 1: Personal Information -->
+        <fieldset>
+            <legend>Personal Information</legend>
+
+            <p>
+                <label for="full-name">Full Name:</label><br>
+                <input type="text" id="full-name" name="full_name" minlength="2" maxlength="50" required>
+            </p>
+
+            <p>
+                <label for="email">Email Address:</label><br>
+                <input type="email" id="email" name="email" required>
+            </p>
+
+            <p>
+                <label for="phone">Phone Number:</label><br>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10,15}" required placeholder="e.g., 0712345678">
+            </p>
+        </fieldset>
+
+        <br>
+
+        <!-- Section 2: Company Information -->
+        <fieldset>
+            <legend>Company Information</legend>
+
+            <p>
+                <label for="company-name">Company Name:</label><br>
+                <input type="text" id="company-name" name="company_name" required>
+            </p>
+
+            <p>
+                <label for="company-website">Company Website:</label><br>
+                <input type="url" id="company-website" name="company_website" placeholder="https://example.com" required>
+            </p>
+
+            <p>
+                <label for="company-size">Company Size:</label><br>
+                <select id="company-size" name="company_size" required>
+                    <option value="">-- Please select --</option>
+                    <option value="1-10">1 - 10 Employees</option>
+                    <option value="11-50">11 - 50 Employees</option>
+                    <option value="51-200">51 - 200 Employees</option>
+                    <option value="200+">200+ Employees</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="industry">Industry:</label><br>
+                <input type="text" id="industry" name="industry" required>
+            </p>
+        </fieldset>
+
+        <br>
+
+        <!-- Section 3: Service Request -->
+        <fieldset>
+            <legend>Service Request</legend>
+
+            <p>
+                <strong>Service Type:</strong><br>
+                <input type="radio" id="service-consulting" name="service_type" value="consulting" required>
+                <label for="service-consulting">Consulting</label><br>
+
+                <input type="radio" id="service-webdev" name="service_type" value="webdev">
+                <label for="service-webdev">Web Development</label><br>
+
+                <input type="radio" id="service-design" name="service_type" value="design">
+                <label for="service-design">UI/UX Design</label>
+            </p>
+
+            <p>
+                <strong>Preferred Contact Method:</strong><br>
+                <input type="checkbox" id="contact-email" name="contact_method[]" value="email">
+                <label for="contact-email">Email</label><br>
+
+                <input type="checkbox" id="contact-phone" name="contact_method[]" value="phone">
+                <label for="contact-phone">Phone</label><br>
+
+                <input type="checkbox" id="contact-whatsapp" name="contact_method[]" value="whatsapp">
+                <label for="contact-whatsapp">WhatsApp</label>
+            </p>
+
+            <p>
+                <label for="appointment-date">Appointment Date:</label><br>
+                <input type="date" id="appointment-date" name="appointment_date" min="2026-01-01" max="2026-12-31" required>
+            </p>
+
+            <p>
+                <label for="appointment-time">Appointment Time:</label><br>
+                <input type="time" id="appointment-time" name="appointment_time" required>
+            </p>
+
+            <p>
+                <label for="budget">Budget Range ($):</label><br>
+                <input type="number" id="budget" name="budget" min="100" max="50000" step="100" required>
+            </p>
+        </fieldset>
+
+        <br>
+
+        <!-- Section 4: Message and Agreement -->
+        <fieldset>
+            <legend>Message and Agreement</legend>
+
+            <p>
+                <label for="additional-info">Additional Information:</label><br>
+                <textarea id="additional-info" name="additional_info" rows="4" cols="50" minlength="10" maxlength="500" placeholder="Provide extra details about your request..."></textarea>
+            </p>
+
+            <p>
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the Terms and Conditions</label>
+            </p>
+        </fieldset>
+
+        <br>
+
+        <!-- Form Submission Buttons -->
+        <p>
+            <input type="submit" value="Submit Request">
+            <input type="reset" value="Reset Form">
+        </p>
+
+    </form>
+
+</body>
+</html>
